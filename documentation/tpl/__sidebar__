@@ -1,0 +1,4 @@
+docs:
+  viz:
+    composite: index.html
+    volume: viz_volume.html

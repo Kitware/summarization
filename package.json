@@ -1,0 +1,29 @@
+{
+  "name": "in-situ-summarization",
+  "description": "Meta project that gather our work around in-situ summarization",
+  "license": "BSD-3-Clause",
+  "version": "0.0.0-semantically-release",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kitware/summarization.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "kw-web-suite": "2.2.1",
+    "kw-doc": "1.0.15"
+  },
+  "scripts": {
+    "postinstall": "find data -name *.tgz -exec tar xvfz {} -C ./data \\;",
+    "doc": "kw-doc -c ./documentation/config.js",
+    "doc:www": "kw-doc -c ./documentation/config.js -s",
+    "doc:publish": "kw-doc -c ./documentation/config.js -p",
+    "commit": "git cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "private": true,
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
