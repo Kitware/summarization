@@ -14,5 +14,6 @@ module.exports = {
   },
   copy: [
     { src: '../data/*', dest: './build-tmp/public/data' },
+    { src: '../node_modules/arctic-viewer/dist/*', dest: './build-tmp/public/docs' },
   ],
 };

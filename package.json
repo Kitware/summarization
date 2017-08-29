@@ -9,11 +9,12 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "arctic-viewer": "1.5.20",
     "kw-web-suite": "2.2.1",
     "kw-doc": "1.0.15"
   },
   "scripts": {
-    "postinstall": "find data -name *.tgz -exec tar xvfz {} -C ./data \\;",
+    "postinstall": "find data -name *.tgz -exec tar xvfz {} -C ./data \\; && find data -name *.gz -exec gzip -d {} \\;",
     "doc": "kw-doc -c ./documentation/config.js",
     "doc:www": "kw-doc -c ./documentation/config.js -s",
     "doc:publish": "kw-doc -c ./documentation/config.js -p",
