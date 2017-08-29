@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "backgroundColor": "#000000",
+    "size": "6.7 MB",
+    "title": "Oscillator composite",
+    "description": "Set of 3 contours of a complex oscillator setup"
+  },
+  "type": [
+    "tonic-query-data-model",
+    "sorted-composite",
+    "multi-color-by"
+  ],
+  "arguments_order": [
+    "theta",
+    "phi",
+    "time"
+  ],
+  "arguments": {
+    "theta": {
+      "default": 1,
+      "ui": "slider",
+      "values": [
+        "-45",
+        "0",
+        "45"
+      ],
+      "bind": {
+        "mouse": {
+          "drag": {
+            "modifier": 0,
+            "coordinate": 1,
+            "step": 30,
+            "orientation": 1
+          }
+        }
+      }
+    },
+    "phi": {
+      "default": 1,
+      "ui": "slider",
+      "values": [
+        "-30",
+        "0",
+        "30"
+      ],
+      "bind": {
+        "mouse": {
+          "drag": {
+            "modifier": 0,
+            "coordinate": 0,
+            "step": 10,
+            "orientation": 1
+          }
+        }
+      }
+    },
+    "time": {
+      "loop": "reverse",
+      "ui": "slider",
+      "values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51"
+      ]
+    }
+  },
+  "data": [
+    {
+      "pattern": "{time}/{theta}_{phi}/intensity.uint8",
+      "type": "array",
+      "name": "intensity"
+    },
+    {
+      "pattern": "{time}/{theta}_{phi}/order.uint8",
+      "type": "array",
+      "name": "order"
+    }
+  ],
+  "SortedComposite": {
+    "ranges": {
+      "scalar": [
+        0,
+        1
+      ]
+    },
+    "layers": 3,
+    "pipeline": [
+      {
+        "colorBy": [
+          {
+            "type": "const",
+            "name": "scalar",
+            "value": 0.25
+          }
+        ],
+        "name": "Contour 0.25"
+      },
+      {
+        "colorBy": [
+          {
+            "type": "const",
+            "name": "scalar",
+            "value": 0.5
+          }
+        ],
+        "name": "Contour 0.5"
+      },
+      {
+        "colorBy": [
+          {
+            "type": "const",
+            "name": "scalar",
+            "value": 0.75
+          }
+        ],
+        "name": "Contour 0.75"
+      }
+    ],
+    "dimensions": [
+      256,
+      256
+    ],
+    "light": [
+      "intensity"
+    ]
+  },
+  "CompositePipeline": {
+    "default_pipeline": "AABACA",
+    "layers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "pipeline": [
+      {
+        "name": "Contour 0.25",
+        "ids": [
+          "A"
+        ]
+      },
+      {
+        "name": "Contour 0.5",
+        "ids": [
+          "B"
+        ]
+      },
+      {
+        "name": "Contour 0.75",
+        "ids": [
+          "C"
+        ]
+      }
+    ],
+    "layer_fields": {
+      "A": [
+        "A"
+      ],
+      "B": [
+        "A"
+      ],
+      "C": [
+        "A"
+      ]
+    },
+    "fields": {
+      "A": "scalar"
+    }
+  }
+}

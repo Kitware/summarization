@@ -1,0 +1,24 @@
+{
+    "origin": [0, 0, 0],
+    "spacing": [1, 1, 1],
+    "extent": [0, 63, 0, 63, 0, 31],
+    "vtkClass": "vtkImageData",
+    "pointData": {
+        "vtkClass": "vtkDataSetAttributes",
+        "arrays": [{
+            "data": {
+                "numberOfComponents": 1,
+                "name": "scalars",
+                "vtkClass": "vtkDataArray",
+                "dataType": "Float32Array",
+                "ref": {
+                    "registration": "setScalars",
+                    "encode": "LittleEndian",
+                    "basepath": "",
+                    "id": "volume.data"
+                },
+                "size": 131072
+            }
+        }]
+    }
+}
