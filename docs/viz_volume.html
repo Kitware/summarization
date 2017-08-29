@@ -39,18 +39,18 @@
   <!-- RSS -->
   <link rel="alternate" href="/summarization/atom.xml" title="In-Situ Summarization">
   <!-- Open Graph -->
-  <meta name="description" content="We can generate a reduced 3D image that can be loaded inside a viewer like ArcticViewer that is illustrated below with a sample dataset.">
+  <meta name="description" content="We can generate a reduced 3D image that can be loaded inside a viewer like ArcticViewer that is illustrated below with a sample dataset.  A Live visualization of that dataset can be seen below:">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Volume reduction">
 <meta property="og:url" content="https://kitware.github.io/summarization/docs/viz_volume.html">
 <meta property="og:site_name" content="In-Situ Summarization">
-<meta property="og:description" content="We can generate a reduced 3D image that can be loaded inside a viewer like ArcticViewer that is illustrated below with a sample dataset.">
+<meta property="og:description" content="We can generate a reduced 3D image that can be loaded inside a viewer like ArcticViewer that is illustrated below with a sample dataset.  A Live visualization of that dataset can be seen below:">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://kitware.github.io/summarization/docs/images/image-volume.jpg">
-<meta property="og:updated_time" content="2017-08-29T17:49:04.714Z">
+<meta property="og:updated_time" content="2017-08-29T18:21:47.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Volume reduction">
-<meta name="twitter:description" content="We can generate a reduced 3D image that can be loaded inside a viewer like ArcticViewer that is illustrated below with a sample dataset.">
+<meta name="twitter:description" content="We can generate a reduced 3D image that can be loaded inside a viewer like ArcticViewer that is illustrated below with a sample dataset.  A Live visualization of that dataset can be seen below:">
 <meta name="twitter:image" content="https://kitware.github.io/summarization/docs/images/image-volume.jpg">
   <!-- Google Analytics -->
   
@@ -94,10 +94,17 @@
               <div class="article-content" itemprop="articleBody">
                 <p>We can generate a reduced 3D image that can be loaded inside a viewer like <a href="https://kitware.github.io/arctic-viewer/">ArcticViewer</a> that is illustrated below with a <a href="/summarization/data/oscillator-volume.tgz">sample dataset</a>.</p>
 <p><img src="./images/image-volume.jpg" alt="VolumeRendering"></p>
+<p>A Live visualization of that dataset can be seen below:</p>
+<p><div class="volume-viewer" style="position: relative; width: 100%; height: 600px; border-radius: 5px; overflow: hidden;"></div></p>
+<script type="text/javascript" src="/summarization/docs/three.js"></script>
+<script type="text/javascript" src="/summarization/docs/viewer.js"></script>
+<script type="text/javascript">
+    ArcticViewer.load('/summarization/data/oscillator-volume/index.json', document.querySelector('.volume-viewer'));
+</script>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-08-29T17:49:04.714Z" itemprop="dateModified">Last updated: 2017-08-29</time>
+                <time class="article-footer-updated" datetime="2017-08-29T18:21:47.445Z" itemprop="dateModified">Last updated: 2017-08-29</time>
                 <a href="index.html" class="article-footer-prev" title="Image Composite"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
               </footer>
               

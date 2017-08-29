@@ -39,18 +39,18 @@
   <!-- RSS -->
   <link rel="alternate" href="/summarization/atom.xml" title="In-Situ Summarization">
   <!-- Open Graph -->
-  <meta name="description" content="We can generate an image composite that can dynamically reconstruct using a viewer like ArcticViewer that is illustrated below with a sample dataset.">
+  <meta name="description" content="We can generate an image composite that can dynamically reconstruct using a viewer like ArcticViewer that is illustrated below with a sample dataset.  A Live visualization of that dataset can be seen">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Image compositing">
 <meta property="og:url" content="https://kitware.github.io/summarization/docs/index.html">
 <meta property="og:site_name" content="In-Situ Summarization">
-<meta property="og:description" content="We can generate an image composite that can dynamically reconstruct using a viewer like ArcticViewer that is illustrated below with a sample dataset.">
+<meta property="og:description" content="We can generate an image composite that can dynamically reconstruct using a viewer like ArcticViewer that is illustrated below with a sample dataset.  A Live visualization of that dataset can be seen">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://kitware.github.io/summarization/docs/images/image-composite.jpg">
-<meta property="og:updated_time" content="2017-08-29T17:49:04.714Z">
+<meta property="og:updated_time" content="2017-08-29T18:21:47.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Image compositing">
-<meta name="twitter:description" content="We can generate an image composite that can dynamically reconstruct using a viewer like ArcticViewer that is illustrated below with a sample dataset.">
+<meta name="twitter:description" content="We can generate an image composite that can dynamically reconstruct using a viewer like ArcticViewer that is illustrated below with a sample dataset.  A Live visualization of that dataset can be seen">
 <meta name="twitter:image" content="https://kitware.github.io/summarization/docs/images/image-composite.jpg">
   <!-- Google Analytics -->
   
@@ -94,10 +94,17 @@
               <div class="article-content" itemprop="articleBody">
                 <p>We can generate an image composite that can dynamically reconstruct using a viewer like <a href="https://kitware.github.io/arctic-viewer/">ArcticViewer</a> that is illustrated below with a <a href="/summarization/data/oscillator-composite.tgz">sample dataset</a>.</p>
 <p><img src="./images/image-composite.jpg" alt="CompositeContours"></p>
+<p>A Live visualization of that dataset can be seen below:</p>
+<p><div class="composite-viewer" style="position: relative; width: 100%; height: 600px; border-radius: 5px; overflow: hidden;"></div></p>
+<script type="text/javascript" src="/summarization/docs/three.js"></script>
+<script type="text/javascript" src="/summarization/docs/viewer.js"></script>
+<script type="text/javascript">
+    ArcticViewer.load('/summarization/data/oscillator-composite/index.json', document.querySelector('.composite-viewer'));
+</script>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-08-29T17:49:04.714Z" itemprop="dateModified">Last updated: 2017-08-29</time>
+                <time class="article-footer-updated" datetime="2017-08-29T18:21:47.441Z" itemprop="dateModified">Last updated: 2017-08-29</time>
                 <a href="viz_volume.html" class="article-footer-next" title="Volume reduction"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
