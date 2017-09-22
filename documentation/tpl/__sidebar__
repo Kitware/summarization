@@ -2,3 +2,4 @@ docs:
   viz:
     composite: index.html
     volume: viz_volume.html
+    cdf: cdf_computation.html

@@ -21,3 +21,4 @@ sidebar:
     viz: Visualization Summarization
     composite: Image Composite
     volume: Volume reduction
+    cdf: CDF computation
