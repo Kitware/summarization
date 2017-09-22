@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Volume compression | In-Situ Summarization</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://kitware.github.io/summarization/docs/slic_compression.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://kitware.github.io/summarization/docs/slic_compression.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/summarization/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/summarization/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/summarization/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/summarization/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/summarization/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/summarization/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/summarization/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/summarization/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/summarization/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/summarization/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/summarization/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/summarization/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/summarization/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/summarization/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/summarization/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/summarization/atom.xml" title="In-Situ Summarization">
+  <!-- Open Graph -->
+  <meta name="description" content="We used a SLIC based compression scheme which stands for Simple Linear Iterative Clustering which allow us to define a set of linear function for a failry small number of clusters.Then we’ve implement">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Volume compression">
+<meta property="og:url" content="https://kitware.github.io/summarization/docs/slic_compression.html">
+<meta property="og:site_name" content="In-Situ Summarization">
+<meta property="og:description" content="We used a SLIC based compression scheme which stands for Simple Linear Iterative Clustering which allow us to define a set of linear function for a failry small number of clusters.Then we’ve implement">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://kitware.github.io/summarization/docs/images/slic-volume.jpg">
+<meta property="og:updated_time" content="2017-09-22T22:59:20.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Volume compression">
+<meta name="twitter:description" content="We used a SLIC based compression scheme which stands for Simple Linear Iterative Clustering which allow us to define a set of linear function for a failry small number of clusters.Then we’ve implement">
+<meta name="twitter:image" content="https://kitware.github.io/summarization/docs/images/slic-volume.jpg">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/summarization/" id="logo">ParaViewWeb</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/summarization/docs/" class="main-nav-link">Documentation</a>
+      <a href="https://github.com/kitware/summarization" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Volume compression</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>We used a SLIC based compression scheme which stands for Simple Linear Iterative Clustering which allow us to define a set of linear function for a failry small number of clusters.<br>Then we’ve implemented a <strong>decoder</strong> in VTK.js which rebuild the volume values based on those clusters functions.<br>Those SLIC based dataset can then be loaded inside a viewer like <a href="https://kitware.github.io/arctic-viewer/">ArcticViewer</a> that is illustrated below.</p>
+<p><img src="./images/slic-volume.jpg" alt="VolumeRendering"></p>
+<p>A Live visualization of that dataset can be seen below:</p>
+<p><div class="volume-viewer" style="position: relative; width: 100%; height: 600px; border-radius: 5px; overflow: hidden;"></div></p>
+<script type="text/javascript" src="/summarization/docs/three.js"></script>
+<script type="text/javascript" src="/summarization/docs/viewer.js"></script>
+<script type="text/javascript">
+    ArcticViewer.load('/summarization/data/oscillator-slic/index.json', document.querySelector('.volume-viewer'));
+</script>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-22T22:59:20.602Z" itemprop="dateModified">Last updated: 2017-09-22</time>
+                <a href="index.html" class="article-footer-next" title="Image Composite"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Visualization Summarization</strong><a href="index.html" class="sidebar-link">Image Composite</a><a href="viz_volume.html" class="sidebar-link">Volume reduction</a><a href="cdf_computation.html" class="sidebar-link">CDF computation</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="http://www.kitware.com" target="_blank">Kitware Inc.</a>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/kitware/summarization" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/summarization/docs/" class="mobile-nav-link">Documentation</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/kitware/summarization" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Visualization Summarization</strong><a href="index.html" class="mobile-nav-link">Image Composite</a><a href="viz_volume.html" class="mobile-nav-link">Volume reduction</a><a href="cdf_computation.html" class="mobile-nav-link">CDF computation</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/slic_compression.html">
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/summarization/js/lang_select.js"></script>
+<script src="/summarization/js/toc.js"></script>
+<script src="/summarization/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+
+</body>
+</html>
