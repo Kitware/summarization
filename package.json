@@ -9,7 +9,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "arctic-viewer": "1.6.2",
+    "arctic-viewer": "1.6.4",
     "kw-web-suite": "2.2.1",
     "kw-doc": "1.0.15"
   },
